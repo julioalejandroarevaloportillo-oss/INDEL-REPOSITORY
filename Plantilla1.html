@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- [MODIFICAR AQUÍ: Título de la pestaña del navegador] -->
+    <title>Expo-Sistemas | TEMA: Sistema Nervioso</title>
+    
+    <!-- Librería para el Visor 3D de Google -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    
+    <!-- Fuentes y Estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0284c7; /* Azul médico */
+            --primary-dark: #0369a1;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+            --accent: #0ea5e9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        
+        /* HEADER / PORTADA */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 1.5rem; }
+        .team-info { background: rgba(255,255,255,0.1); display: inline-block; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; }
+
+        /* CONTENEDOR PRINCIPAL */
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+
+        /* SECCIONES */
+        section { background: var(--card-bg); margin-bottom: 2rem; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        h2 { color: var(--primary-dark); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--bg-color); padding-bottom: 0.5rem; }
+
+        /* 3D VIEWER */
+        .model-container { width: 100%; height: 450px; background: #e2e8f0; border-radius: 8px; overflow: hidden; position: relative; }
+        model-viewer { width: 100%; height: 100%; }
+
+        /* TEXTO Y TARJETAS */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+        
+        .alert-box { background: #fef3c7; border-left: 5px solid #d97706; padding: 1rem; border-radius: 4px; margin-top: 1rem; }
+
+        /* IFRAME JUEGOS Y EVALUACIÓN */
+        .iframe-container { position: relative; width: 100%; height: 500px; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
+        .iframe-container iframe { width: 100%; height: 100%; border: none; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. CABECERA Y PORTADA ================= -->
+    <header>
+        <!-- [MODIFICAR AQUÍ: Título del tema asignado] -->
+        <h1>Sistema Nervioso y sus Divisiones</h1>
+        <!-- [MODIFICAR AQUÍ: Breve descripción] -->
+        <p>Plataforma interactiva de exploración anatómica y fisiológica humana.</p>
+        
+        <!-- [MODIFICAR AQUÍ: Nombres de los 4 integrantes del equipo] -->
+        <div class="team-info">
+            <strong>Equipo 3:</strong> Ana Pérez • Carlos Gómez • Sofía Ruiz • Luis Martínez
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- ================= 2. ATLAS 3D ANATÓMICO ================= -->
+        <section>
+            <h2>Atlas Anatómico 3D Interactivo</h2>
+            <p>Utiliza el ratón o los dedos para rotar, hacer zoom y explorar el modelo tridimensional. Haz clic en las etiquetas para más detalles.</p>
+            <br>
+            <div class="model-container">
+                <!-- 
+                  [MODIFICAR AQUÍ: El atributo 'src' debe apuntar a un archivo .glb o .gltf]
+                  Puedes descargar modelos gratuitos de Sketchfab o usar enlaces directos.
+                -->
+                <model-viewer 
+                    src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                    alt="Modelo 3D del tema" 
+                    auto-rotate 
+                    camera-controls>
+                </model-viewer>
+            </div>
+        </section>
+
+        <!-- ================= 3. CONTENIDO CIENTÍFICO Y FISIOLOGÍA ================= -->
+        <section>
+            <h2>Fundamentos Científicos y Fisiología</h2>
+            <div class="grid-2">
+                <div>
+                    <!-- [MODIFICAR AQUÍ: Textos explicativos con lenguaje técnico] -->
+                    <p><strong>Descripción general:</strong> El sistema nervioso es el sistema más complejo del cuerpo, encargado de dirigir, supervisar y controlar todas las funciones y actividades de nuestros órganos y organismo en general.</p>
+                    <br>
+                    <p>Se divide anatómicamente en Sistema Nervioso Central (SNC) y Sistema Nervioso Periférico (SNP). A nivel celular, la unidad funcional fundamental es la neurona, especializada en la transmisión de impulsos eléctricos mediante sinapsis químicas y eléctricas.</p>
+                </div>
+                <div>
+                    <!-- [MODIFICAR AQUÍ: Puedes poner una imagen, infografía o esquema] -->
+                    <div style="background: #cbd5e1; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #475569;">
+                        [Espacio para Infografía o Esquema Interactivo]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. SALUD Y AUTOCUIDADO (Obligatorio por rúbrica) ================= -->
+        <section>
+            <h2>Salud y Medidas de Autocuidado</h2>
+            <p>Para mantener un óptimo funcionamiento de este sistema, la ciencia médica recomienda las siguientes medidas preventivas fundamentadas:</p>
+            
+            <div class="alert-box">
+                <!-- [MODIFICAR AQUÍ: Argumentar medidas de autocuidado fundamentadas científicamente] -->
+                <strong>Argumento Científico:</strong> El descanso adecuado (7-8 horas de sueño profundo) es vital para la consolidación de la memoria y la limpieza de metabolitos tóxicos en el tejido nervioso a través del sistema glinfático. Asimismo, una dieta rica en ácidos grasos Omega-3 favorece la integridad de las vainas de mielina.
+            </div>
+        </section>
+
+        <!-- ================= 5. RECURSO INTERACTIVO / VIDEOJUEGO ================= -->
+        <section>
+            <h2>Zona Interactiva (Videojuego Educativo)</h2>
+            <p>Pon a prueba tus conocimientos interactuando con la siguiente dinámica lúdica creada para este tema.</p>
+            <br>
+            <div class="iframe-container">
+                <!-- 
+                  [MODIFICAR AQUÍ: Pega el código 'iframe' o enlace embed de Genially, Wordwall, Scratch o Educaplay] 
+                -->
+                <iframe src="https://wordwall.net/es/embed/placeholder" title="Videojuego Educativo"></iframe>
+            </div>
+        </section>
+
+        <!-- ================= 6. EVALUACIÓN DIGITAL ================= -->
+        <section>
+            <h2>Evaluación de Aprendizaje</h2>
+            <p>Responde el siguiente cuestionario digital para verificar tu nivel de comprensión sobre el tema expuesto.</p>
+            <br>
+            <div class="iframe-container">
+                <!-- 
+                  [MODIFICAR AQUÍ: Pega el código 'iframe' de Google Forms o Kahoot] 
+                -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeu_ejemplo/viewform?embedded=true" title="Cuestionario Evaluativo">Heading...</iframe>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ================= 7. PIE DE PÁGINA / CRÉDITOS ================= -->
+    <footer>
+        <p>Proyecto Integrador • Anatomía y Fisiología Humana</p>
+        <p>Referencias: Guyton & Hall, Tratado de Fisiología Médica. / Recursos bajo licencia educativa.</p>
+    </footer>
+
+</body>
+</html>
