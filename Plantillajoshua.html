@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla - Instituto Nacional Cantón Lourdes</title>
+
+    <!-- Enlaces generados por Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Idiqlat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Idiqlat:wght@200;300;400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /*TONOS AZULES*/
+        :root {
+            --bg-color: #e3f2fd;
+            --card-bg: #bbdefb;
+            --card-header-bg: #90caf9;
+            --primary-blue: #1565c0;
+            --accent-blue: #0d47a1;
+            --text-color: #001f3f;
+            --border-radius: 12px;
+            --shadow: 0 4px 8px rgba(21, 101, 192, 0.15);
+            --accordion-bg: rgba(255, 255, 255, 0.5);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --card-header-bg: #334155;
+            --primary-blue: #60a5fa;
+            --accent-blue: #93c5fd;
+            --text-color: #f8fafc;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --accordion-bg: rgba(15, 23, 42, 0.8);
+        }
+
+        /*TONOS VERDES*/
+        /*:root {
+            --bg-color: #e8f5e9;
+            --card-bg: #c8e6c9;
+            --card-header-bg: #a5d6a7;
+            --primary-blue: #2e7d32;
+            --accent-blue: #1b5e20;
+            --text-color: #052e16;
+            --border-radius: 12px;
+            --shadow: 0 4px 8px rgba(46, 125, 50, 0.15);
+            --accordion-bg: rgba(255, 255, 255, 0.5);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #062312;
+            --card-bg: #0b381c;
+            --card-header-bg: #144d27;
+            --primary-blue: #4ade80;
+            --accent-blue: #86efac;
+            --text-color: #f0fdf4;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            --accordion-bg: rgba(6, 35, 18, 0.8);
+        }*/
+
+        /*TONOS BESH*/
+        /*:root {
+            --bg-color: #f5f2eb;
+            --card-bg: #e6e0d3;
+            --card-header-bg: #d4caa8;
+            --primary-blue: #5c4033;
+            --accent-blue: #3b2a20;
+            --text-color: #2b231d;
+            --border-radius: 12px;
+            --shadow: 0 4px 8px rgba(92, 64, 51, 0.12);
+            --accordion-bg: rgba(255, 255, 255, 0.5);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1614;
+            --card-bg: #28231f;
+            --card-header-bg: #3a322c;
+            --primary-blue: #d2b48c;
+            --accent-blue: #e6ccb2;
+            --text-color: #f5f2eb;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            --accordion-bg: rgba(26, 22, 20, 0.8);
+        }*/
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0 0 40px 0;
+            font-family: 'Idiqlat', 'Open Sans', 'Roboto', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 3px solid var(--primary-blue);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: background-color 0.3s ease;
+        }
+
+        .logo-img {
+            position: absolute;
+            left: 20px;
+            width: 100px;
+            height: auto;
+            border-radius: 5%;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+        }
+
+        header h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            letter-spacing: 0.5px;
+            text-align: center;
+            margin: 0 120px;
+        }
+
+        header h1:hover {
+            color: var(--accent-blue);
+            transition: color 0.2s;
+        }
+
+        .btn-theme {
+            position: absolute;
+            right: 20px;
+            background-color: var(--primary-blue);
+            color: var(--bg-color);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn-theme:hover {
+            background-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 25px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(21, 101, 192, 0.2);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .hero-card h2 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .hero-card:hover {
+            transform: scale(1.02);
+            transition: transform 0.2s;
+        }
+
+        .hero-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image-placeholder {
+            width: 150px;
+            height: 150px;
+            background-color: var(--card-header-bg);
+            border: 2px dashed var(--primary-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-item {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(21, 101, 192, 0.2);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: var(--primary-blue);
+            transform: scale(1.02);
+            transition: transform 0.2s;
+        }
+
+        .accordion-header {
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 18px 20px;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .accordion-header:hover {
+            background-color: var(--card-header-bg);
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: var(--accordion-bg);
+            padding: 0 20px;
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 20px;
+            max-height: 800px;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .eval-card:hover {
+            transform: scale(1.02);
+            transition: transform 0.2s;
+        }
+
+        .eval-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .eval-card p {
+            margin-bottom: 20px;
+        }
+
+        .btn-eval {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--bg-color);
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn-eval:hover {
+            background-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .sidebar-card ul li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .nav-list {
+            list-style-type: none !important;
+            padding-left: 0 !important;
+        }
+
+        .nav-list li {
+            margin-bottom: 10px !important;
+        }
+
+        .nav-list a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .nav-list a:hover {
+            background-color: var(--card-header-bg);
+        }
+
+        footer {
+            margin-top: 30px;
+            background-color: var(--card-bg);
+            border-top: 3px solid var(--primary-blue);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--primary-blue);
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                position: static;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .logo-img {
+                position: static;
+                width: 150px;
+                height: auto;
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 1.8rem;
+            }
+
+            .btn-theme {
+                position: static;
+                width: 100%;
+                text-align: center;
+                color: var(--bg-color);
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .right-column {
+                order: 2;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+
+            .hero-image-placeholder {
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+                aspect-ratio: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="https://tse1.mm.bing.net/th/id/OIP.-IWNlxkjJ4LL54fboGm6AQHaFa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="Logo de la Institución" class="logo-img">
+        <h1>INSTITUTO NACIONAL CANTÓN LOURDES</h1>
+        <button id="theme-toggle" class="btn-theme">🌙 Oscuro</button>
+    </header>
+
+    <div class="main-wrapper">
+        <div class="content-grid">
+
+            <main class="left-column">
+
+                <section class="card hero-card" id="Tema">
+                    <h2>Título / Tema</h2>
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <p><strong>(Información a añadir)</strong></p>
+                            <p>Aquí irá el texto de tu tema principal. Hay suficiente espacio para extenderte según lo
+                                que necesites presentar.</p>
+                        </div>
+                        <div class="hero-image-placeholder">
+                            <img src="" alt="Ingresa la imagen" class="hero-image-placeholder">
+                        </div>
+                    </div>
+                </section>
+
+                <div class="accordion-item" id="Información-Científica">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Información Científica</span>
+                        <span class="accordion-icon">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Aquí va todo el contenido científico, definiciones y explicaciones teóricas que quedarán
+                            ocultas hasta tocar el botón.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="Juegos-Recursos">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Juegos / Recursos</span>
+                        <span class="accordion-icon">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Coloca los enlaces a actividades, PDFs o herramientas externas que complementen el
+                            aprendizaje.</p>
+                    </div>
+                </div>
+
+                <section class="card eval-card" id="Evaluación">
+                    <h3>Evaluación</h3>
+                    <p>Agrega la descripción o indicaciones de lo que el estudiante encontrará en la prueba.</p>
+                    <a href="#" class="btn-eval" target="_blank">Ir a la evaluación</a>
+                </section>
+
+            </main>
+
+            <aside class="right-column">
+
+                <div class="card sidebar-card">
+                    <h4>Grupo 1</h4>
+                    <p><strong>Miembros:</strong></p>
+                    <ul>
+                        <li>Nombre Integrante 1</li>
+                        <li>Nombre Integrante 2</li>
+                        <li>Nombre Integrante 3</li>
+                        <li>Nombre Integrante 4</li>
+                        <li>Nombre Integrante 5</li>
+                    </ul>
+                </div>
+
+                <div class="card sidebar-card">
+                    <h4>Navegar</h4>
+                    <ul class="nav-list">
+                        <li><a href="#Tema">― Inicio / Tema</a></li>
+                        <li><a href="#Información-Científica">― Info. Científica</a></li>
+                        <li><a href="#Juegos-Recursos">― Juegos y Recursos</a></li>
+                        <li><a href="#Evaluación">― Evaluación</a></li>
+                    </ul>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        (Datos del creador) &copy; 2026 - Todos los derechos reservados
+    </footer>
+
+    <script>
+        // Lógica del Acordeón
+        function toggleAccordion(headerElement) {
+            const accordionItem = headerElement.parentElement;
+
+            const allItems = document.querySelectorAll('.accordion-item');
+            allItems.forEach(item => {
+                if (item !== accordionItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            accordionItem.classList.toggle('active');
+        }
+
+        // Lógica del Modo Oscuro/Claro
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.textContent = '☀️ Claro';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙 Oscuro';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️ Claro';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
